@@ -1,7 +1,7 @@
 //Tạo bản đồ
-var map = L.map('map').setView([10.822133, 106.628400], 13);
+var map = L.map('map').setView([10.822133, 106.628400], 13 );
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
+maxZoom: 17,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -13,7 +13,7 @@ function success(pos) {
     const lng = pos.coords.longitude;
     const accuracy = pos.coords.accuracy;
     let marker= L.marker([lat, lng]).addTo(map);
-    let circle= L.circle([lat, lng], {radius: accuracy}).addTo(map);
+    let circle= L.circle([lat, lng], {radius: 100}).addTo(map);
 
     map.fitBounds(circle.getBounds());
 }
@@ -35,3 +35,14 @@ function display (){
     }
 }
 display();
+
+// lịch sử tọa độ của người dùng
+
+map.on('moveend', function () {
+    $('.center-id').html(lat_lng_to_string(map.getCenter()));
+})
+
+
+function lat_lng_to_string(ll) {
+    return "["+ll.lat.toFixed(5)+","+ll.lng.toFixed(5)+"]";
+}

@@ -45,22 +45,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #000;
 }
 
-a#scrollUp {
-  bottom: 0px;
-  right: 10px;
-  padding: 5px 10px;
-  background: #FE980F;
-  color: #FFF;
-  -webkit-animation: bounce 2s ease infinite;
-  animation: bounce 2s ease infinite;
-}
-
-a#scrollUp i{
-  font-size: 30px;
-}
-
 .header_top {
-  background: none repeat scroll 0 0 #F0F0E9;
+  background: none repeat scroll 0 0 #080807;
 }
 
 .contactinfo ul li:first-child{
@@ -69,7 +55,7 @@ a#scrollUp i{
 
 .contactinfo ul li a{
   font-size: 12px;
-  color: #696763;
+  color: #f8f7f4;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -80,7 +66,7 @@ a#scrollUp i{
 .social-icons ul li a {
   border: 0 none;
   border-radius: 0;
-  color: #696763;
+  color: #f9f8f7;
   padding:0px;
 }
 
@@ -113,7 +99,7 @@ a#scrollUp i{
 }
 
 .fa-google-plus:hover  {
-	background:#CE3C2D;
+	background:#FF4518;
 }
 
 .header-middle .container .row {
@@ -129,7 +115,7 @@ a#scrollUp i{
 }
 
 .header-middle .container .row .col-sm-8 {
-  margin-left: 1000px;
+  margin-left: 900px;
 }
 
 .shop-menu ul li {
@@ -158,7 +144,7 @@ a#scrollUp i{
 }
 
 .shop-menu ul li a:hover {
-	color:#fe980f;
+	color:#FF4518;
 	background:#fff;
 }
 
@@ -192,12 +178,12 @@ a#scrollUp i{
 
 .mainmenu ul li a:hover, .mainmenu ul li a.active,  .shop-menu ul li a.active{
 	background:none;
-	color:#fdb45e;
+	color:#FF4518;
 }
 
 /* header */
-.logo1 a {
-    font-size: 25px;
+.logo1 img {
+    width: 100%;
 }
 
 /* Footer */
@@ -221,16 +207,7 @@ a#scrollUp i{
   text-transform: uppercase;
 }
 
-.companyinfo h2  span{
-  color:#FE980F;
-}
 
-.companyinfo p {
-  color: #B3B3AD;
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  font-weight: 300;
-}
 
 .footer-top .col-sm-3{
   overflow: hidden;
@@ -272,7 +249,7 @@ a#scrollUp i{
 
 .single-widget ul li a:hover{
 	background:none;
-	color:#FE980F;
+	color:#FF4518;
 }
 
 .searchform input {
@@ -287,7 +264,7 @@ a#scrollUp i{
 }
 
 .searchform button {
-  background: #FE980F;
+  background: #FF4518;
   border: medium none;
   border-radius: 0;
   margin-left: -5px;
@@ -314,12 +291,12 @@ a#scrollUp i{
 }
 
 .footer-bottom {
-  background: #D6D6D0;
+  background: #030303;
   padding-top: 10px;
 }
 
 .footer-bottom p {
-  color: #363432;
+  color: #f9f4ef;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   margin-left: 15px;
@@ -358,7 +335,7 @@ a#scrollUp i{
 }
 
 .left-sidebar h2, .brands_products h2 {
-  color: #FE980F;
+  color: #121110;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -408,7 +385,7 @@ a#scrollUp i{
 }
 
 h2.title {
-  color: #FE980F;
+  color: #0a0a0a;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;

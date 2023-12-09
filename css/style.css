@@ -1,169 +1,219 @@
-
 /* leaflet */
 #map {
-    width:100%;
-    height:60%;
+  width: 100%;
+  height: 60%;
 }
 
 .map-popup-content {
-    width: 300px;
+  width: 300px;
 }
 
 .map-popup-content .left {
-    float:left;
-    width: 40%;
+  float: left;
+  width: 40%;
 }
 .map-popup-content .left img {
-    width:100%;
-    height:100px;
-    margin: -15px 0 -15px -20px;
-    border-radius:12px;
+  width: 100%;
+  height: 100px;
+  margin: -15px 0 -15px -20px;
+  border-radius: 12px;
 }
 
 .map-popup-content .right {
-    float:left;
-    width: 60%;
+  float: left;
+  width: 60%;
 }
 
 .clearfix {
-    clear:both;
+  clear: both;
+}
+
+#list_history {
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
 }
 
 .panel-title p {
   color: #c51616;
 }
 
+.list-history_location ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.list-history_location li {
+  padding: 20px 0px;
+  font-size: 14px;
+  line-height: 0.9;
+  font-weight: 600;
+}
+.list-history_location li:not(:last-child) {
+  border-bottom: 1px solid gray;
+}
+.list-history_location li:hover {
+  background: #39a696;
+  color: whitesmoke;
+}
+.btn-left_sidebar {
+  margin-bottom: 5px;
+}
+
+.btn-left_sidebar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.btn-left_sidebar button:hover {
+  background: #39a696;
+  color: whitesmoke;
+  border: 1px solid #39a696;
+}
+
+.btn-left_sidebar button:hover path {
+  background: whitesmoke;
+}
+
 /* Login */
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    background: #f5f5f5;
-    margin-left: 300px;
-  }
-  .login__container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .login__container h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    text-align: center;
-  }
-  .login__container form {
-    display: flex;
-    flex-direction: column;
-  }
-  .login__container form label {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  .login__container form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  .login__container form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #333;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  .login__container form button:hover {
-    background: #0b0b0b;
-  }
-  .login__container form a {
-    text-align: center;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #333;
-  }
-  .login__container form a:hover {
-    color: #555;
-  }
-  .login__registerButton {
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: black;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: block;
-  }
-  /*signup */
-  .signup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75vh;
-    background: #f5f5f5;
-    margin-left: 300px;
-  }
-  .signup__container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .signup__container h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    text-align: center;
-  }
-  .signup__container form {
-    display: flex;
-    flex-direction: column;
-  }
-  .signup__container form label {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  .signup__container form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  .signup__container form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #333;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  .signup__container form button:hover {
-    background: #070707;
-  }
-  .signup__container form a {
-    text-align: center;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #333;
-  }
-  .signup__container form a:hover {
-    color: #555;
-  }
-  .signup__registerButton {
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: black;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: block;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background: #f5f5f5;
+  margin-left: 300px;
+}
+.login__container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login__container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+.login__container form {
+  display: flex;
+  flex-direction: column;
+}
+.login__container form label {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.login__container form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.login__container form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.login__container form button:hover {
+  background: #0b0b0b;
+}
+.login__container form a {
+  text-align: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
+}
+.login__container form a:hover {
+  color: #555;
+}
+.login__registerButton {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: block;
+}
+/*signup */
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  background: #f5f5f5;
+  margin-left: 300px;
+}
+.signup__container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.signup__container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+.signup__container form {
+  display: flex;
+  flex-direction: column;
+}
+.signup__container form label {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.signup__container form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.signup__container form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.signup__container form button:hover {
+  background: #070707;
+}
+.signup__container form a {
+  text-align: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
+}
+.signup__container form a:hover {
+  color: #555;
+}
+.signup__registerButton {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: block;
+}

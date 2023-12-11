@@ -18,17 +18,6 @@ function onMapClick(e) {
 
 map.on("click", onMapClick);
 
-// var greenIcon = L.icon({
-//   iconUrl: "https://static.thenounproject.com/png/218331-200.png",
-//   //   shadowUrl: "leaf-shadow.png",
-
-//   iconSize: [38, 95], // size of the icon
-//   shadowSize: [50, 64], // size of the shadow
-//   iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-//   shadowAnchor: [4, 62], // the same for the shadow
-//   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-// });
-
 // Get location current
 const locationCurrent = document.getElementById("location_current");
 //lấy vị trí & Tạo chấm đỏ trên map
@@ -37,6 +26,9 @@ locationCurrent.addEventListener("click", function () {
   function success(pos) {
     const lat = pos.coords.latitude; // vĩ độ
     const lng = pos.coords.longitude; // kinh độ
+    // const lat = 10.813955;
+    // const lng = 106.678634;
+
     const accuracy = pos.coords.accuracy;
     let marker = L.marker([lat, lng]).addTo(map);
     let circle = L.circle([lat, lng], { radius: 100 }).addTo(map);
@@ -55,6 +47,8 @@ locationCurrent.addEventListener("click", function () {
         const data = {
           lat: position.coords.latitude,
           long: position.coords.longitude,
+          // lat: 10.813955,
+          // long: 106.678634,
         };
         console.log(data);
       });
@@ -91,28 +85,40 @@ locationCurrent.addEventListener("click", function () {
 // lịch sử tọa độ của người dùng
 const list_history_fake = [
   {
-    lat: 10.76918,
-    long: 106.65218,
+    lat: 10.811247,
+    long: 106.690779,
+    href: "https://maps.app.goo.gl/SZL8hCGFpaAg7ou1A",
   },
   {
     lat: 10.76918,
     long: 106.65218,
+    href: "https://maps.app.goo.gl/L187fmKobFRaXCnQA",
   },
   {
     lat: 10.76918,
     long: 106.65218,
+    href: "https://maps.app.goo.gl/B9e6gxPThKH8YxBz9",
   },
   {
     lat: 10.76918,
     long: 106.65218,
+    href: "https://maps.app.goo.gl/X5m8qBu1pb6WnYKP6",
   },
   {
     lat: 10.76918,
     long: 106.65218,
+    href: "https://www.facebook.com/",
   },
 ];
+
 const render_list = list_history_fake.map(
-  (location) => `<li>[${location.lat},${location.long}]</li>`
+  (location) => `
+    <li>
+     <a href="${location.href}" target="_blank">
+     [${location.lat},${location.long}]
+     </a>
+    </li>
+ `
 );
 
 // Lấy btn history_location

@@ -95,8 +95,8 @@ const list_history_fake = [
     long: 106.65218,
   },
   {
-    lat: 10.76918,
-    long: 106.65218,
+    lat: 10.794867,
+    long: 106.721768,
   },
   {
     lat: 10.76918,

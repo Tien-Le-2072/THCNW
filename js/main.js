@@ -15,9 +15,17 @@ btnLogin.addEventListener("click", (e) => {
       user.password === inputPassword.value
     ) {
       alert("Đăng Nhập Thành Công");
-      window.location.href = "index.html";
+      window.location.href = "home.html";
     } else {
       alert("Đăng Nhập Thất Bại");
     }
   }
 });
+
+/*price range*/
+
+$('#sl2').slider();
+
+var RGBChange = function() {
+  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
+};	

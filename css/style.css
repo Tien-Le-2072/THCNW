@@ -83,6 +83,14 @@
   background: whitesmoke;
 }
 
+/* input check box */
+.main-input_history {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  font-size: 20;
+}
+
 /* Login */
 .login {
   display: flex;

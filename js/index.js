@@ -1,10 +1,69 @@
 //Tạo bản đồ
-var map = L.map("map").setView([10.769189, 106.652139], 13);
+var map = L.map("map").setView([10.7921636, 106.6506489], 13);
+
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
+  maxZoom: 21,
   attribution:
     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
+
+// Random 5 vị trí
+var randomLocationCheckbox = document.getElementById("randomLocation");
+var nearbyPoints = [];
+
+randomLocationCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    var lat = sessionStorage.getItem("lat").toString();
+    var lng = sessionStorage.getItem("lng").toString();
+
+    if (lat && lng === "") return alert("Bạn chưa set vị trí hiện tại");
+    getNearbyPoints(lat, lng);
+  } else {
+    // Xóa tất cả các điểm xung quanh khi checkbox được bỏ chọn
+    nearbyPoints.forEach((point) => map.removeLayer(point));
+  }
+});
+
+function getNearbyPoints(lat, lng) {
+  nearbyPoints.forEach((point) => map.removeLayer(point));
+
+  nearbyPoints = [];
+
+  // Tạo 5 điểm xung quanh vị trí hiện tại
+  for (let i = 0; i < 5; i++) {
+    let newLat = Number(lat) + (Math.random() - 0.5) * 0.001;
+    let newLng = Number(lng) + (Math.random() - 0.5) * 0.001;
+
+    var marker = L.marker([newLat, newLng]).addTo(map);
+    nearbyPoints.push(marker);
+  }
+}
+
+// Cố định 5 vị trí
+var showCafesCheckbox = document.getElementById("showCafes");
+var cafeMarkers = [];
+showCafesCheckbox.addEventListener("change", function () {
+  var cafes = [
+    { name: "The coffe house", location: [10.803963, 106.639861] },
+    { name: "Highland", location: [10.803246, 106.64257] },
+    { name: "Cá tra", location: [10.802862, 106.639738] },
+    { name: "Cộng Coffe", location: [10.802182, 106.641267] },
+    { name: "Three O'Clock", location: [10.802182, 106.641267] },
+  ];
+
+  if (this.checked) {
+    // Hiển thị các địa điểm (quán cafe)
+    cafes.forEach((caf) => {
+      var marker = L.marker(caf.location).addTo(map);
+      marker.bindPopup("<b>" + caf.name + "</b>");
+      cafeMarkers.push(marker);
+    });
+  } else {
+    // Xóa tất cả các địa điểm (quán cafe)
+    cafeMarkers.forEach((marker) => map.removeLayer(marker));
+    cafeMarkers = [];
+  }
+});
 
 // Show tọa độ vừa click trên bản đồ
 var popup = L.popup();
@@ -26,6 +85,8 @@ locationCurrent.addEventListener("click", function () {
   function success(pos) {
     const lat = pos.coords.latitude; // vĩ độ
     const lng = pos.coords.longitude; // kinh độ
+    sessionStorage.setItem("lat", lat);
+    sessionStorage.setItem("lng", lng);
     // const lat = 10.813955;
     // const lng = 106.678634;
 

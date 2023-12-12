@@ -54,13 +54,13 @@
         <!-- Header -->
         <div class="header-middle">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
+                <div class="under-header">
+                    <div class="">
                         <div class="logo1">
                             <a href="index.html"><img src="images/z4926289079084_f2dcab3c7ee222af9e1b6ca071ae1822.jpg"
                                     alt="" /></a>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
                                     <li><a href="#"><i class="fa fa-user"></i> Lê Văn Tiến </a></li>
@@ -75,8 +75,13 @@
             <!-- Container -->
             <section>
                 <div class="container">
+                    <div>
+                        <label for="searchInput">Tìm kiếm địa điểm:</label>
+                        <input type="text" id="searchInput" />
+                        <button onclick="searchLocation()">Tìm kiếm</button>
+                    </div>
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-md-3 col-sm-12">
                             <div class="left-sidebar">
                                 <!-- <h2>Lịch Sử Vị Trí Của Bạn</h2> -->
                                 <h2>Vị trí</h2>
@@ -112,92 +117,21 @@
                                 </div>
                                 <div class="main-input_history">
                                     <label class="input_history">
-                                        <input type="checkbox" name="" id="" value="">
-                                        <a href="https://www.google.com/maps/search/cafe/@9.7811411,105.6189028,11z/data=!3m1!4b1?hl=vi-VN&entry=ttu"
-                                            target="_blank">
-                                            5 quán cà phê gần bạn
-                                        </a>
-                                    </label>
-                                    <label class="input_history">
-                                        <input type="checkbox" name="" id="" value="">
-                                        <a href="https://www.google.com/maps/search/Nh%C3%A0+h%C3%A0ng/@9.7805437,105.6189033,11z/data=!4m2!2m1!6e5?hl=vi-VN&entry=ttu"
-                                            target="_blank">
-                                            5 hotel gần bạn
-                                        </a>
+                                        <input type="checkbox" id="showCafes" /> Hiển thị Quán Cafe
                                     </label>
 
                                     <label class="input_history">
-                                        <input type="checkbox" name="" id="" value="">
-                                        <a href="https://www.google.com/maps/search/qua%CC%81n+%C4%83n/@9.7811411,105.6189028,11z?hl=vi-VN&entry=ttu"
-                                            target="_blank">
-                                            5 quán ăn gần bạn
-                                        </a>
+                                        <input type="checkbox" id="randomLocation" /> Hiển thị 5 vị trí xung quanh
                                     </label>
                                 </div>
                             </div>
 
-                            <!-- <div class="panel-group category-products" id="accordian">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordian" href="#">
-                                                <span class="badge pull-right"></span>Tọa độ</a>
-                                        </h4>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordian" href="#">
-                                                    <span class="badge pull-right"></span>Tọa độ</a>
-                                            </h4>
-                                        </div>
-                                        <div id="sportswear" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul>
-                                                    <li><a href="#">A </a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordian" href="#">
-                                            </h4>
-                                        </div>
-                                        <div id="mens" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul>
-                                                    <li><a href="#">B</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordian" href="#">
-                                                    <span class="badge pull-right"></span>
-                                                    <p class="center-id"></p>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="womens" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul>
-                                                    <li><a href="#">C</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                         </div>
-                    </div>
-                    <div class="col-sm-9 padding-right">
-                        <div class="features_items">
-                            <h2 class="title text-center">Bản đồ </h2>
-                            <!-- <h2 class="title text-center">Vị Trí Của Bạn </h2> -->
-                            <div id="map">
+                        <div class="col-md-9 col-sm-12 padding-right">
+                            <div class="features_items">
+                                <h2 class="title text-center">Bản đồ </h2>
+                                <div id="map">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -280,8 +214,38 @@
         <script src="js/main.js"></script>
         <script src="js/signup.js"></script>
         <script src="js/jquery-3.5.1.js"></script>
+        <script>
+            var map = L.map("map").setView([10.7921636, 106.6506489], 13);
 
+            L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 21,
+                attribution:
+                    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            }).addTo(map);
 
+            function searchLocation() {
+                var searchInput = document.getElementById('searchInput').value;
+                var params = new URLSearchParams(window.location.search);
+                params.set('search', searchInput);
+                var newUrl = window.location.pathname + '?' + params.toString();
+                history.pushState({ path: newUrl }, '', newUrl);
+                // Sử dụng Nominatim API để tìm kiếm vị trí
+                fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${searchInput}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.length > 0) {
+                            var results = data.slice(0, 4);
+                            results.forEach((val) => {
+                                var marker = L.marker([val.lat, val.lon]).addTo(map);
+                            });
+                        } else {
+                            document.getElementById('searchInput').value = ""
+                            alert('Không tìm thấy địa điểm.');
+                        }
+                    })
+                    .catch(error => console.error('Lỗi khi tìm kiếm địa điểm:', error));
+            }
+        </script>
 </body>
 
 </html>

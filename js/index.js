@@ -91,29 +91,43 @@ locationCurrent.addEventListener("click", function () {
 // lịch sử tọa độ của người dùng
 const list_history_fake = [
   {
-    lat: 10.76918,
-    long: 106.65218,
+    lat: 10.757796,
+    long: 106.599033,
+    href: "https://www.google.com/maps/place/10%C2%B045'28.1%22N+106%C2%B035'56.5%22E/@10.757796,106.597536,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.757796!4d106.599033?entry=ttu",
   },
   {
-    lat: 10.794867,
-    long: 106.721768,
+    lat: 10.766785, 
+    long: 106.60408,
+    href:"https://www.google.com/maps/place/Chung+c%C6%B0+L%C3%AA+Th%C3%A0nh/@10.7668916,106.6047187,17.92z/data=!4m6!3m5!1s0x31752c4737c977e1:0x9bf428c4d164d98d!8m2!3d10.7667672!4d106.6039283!16s%2Fg%2F11hcdvndrc?entry=ttu",
   },
   {
-    lat: 10.76918,
-    long: 106.65218,
+    lat: 10.808940, 
+    long: 106.6337,
+    href:"https://www.google.com/maps/place/Big+C+Tr%C6%B0%E1%BB%9Dng+Chinh/@10.7925553,106.6333545,13.35z/data=!4m6!3m5!1s0x3175295916294ecb:0xbf731034fb27c5b8!8m2!3d10.8064862!4d106.6341961!16s%2Fg%2F1hhh728pf?entry=ttu",
   },
   {
-    lat: 10.76918,
-    long: 106.65218,
+    lat: 10.795451, 
+    long: 106.7220,
+    href:"https://www.google.com/maps/place/T%C3%B2a+nh%C3%A0+The+Landmark+81/@10.8099059,106.7193579,14.13z/data=!4m6!3m5!1s0x317527c2f8f30911:0x36ac5073f8c91acd!8m2!3d10.7949932!4d106.7218215!16s%2Fm%2F012hcpml?entry=ttu",
   },
   {
-    lat: 10.76918,
-    long: 106.65218,
+    lat: 10.829834, 
+    long: 106.7210,
+    href:"https://www.google.com/maps/place/CGV+Giga+Mall+Th%E1%BB%A7+%C4%90%E1%BB%A9c/@10.8111496,106.7166474,13.81z/data=!4m6!3m5!1s0x31752930d4f0ef63:0xfeffcc189deddb5b!8m2!3d10.8276003!4d106.7212132!16s%2Fg%2F11gy8q_jz6?entry=ttu",
   },
 ];
 const render_list = list_history_fake.map(
-  (location) => `<li>[${location.lat},${location.long}]</li>`
+  (location) => `
+    <li>
+     <a href="${location.href}" target="_blank">
+     [${location.lat},${location.long}]
+     </a>
+    </li>
+ `
 );
+// const render_list = list_history_fake.map(
+//   (location) => `<li>[${location.lat},${location.long}]</li>`
+// );
 
 // Lấy btn history_location
 const btn_history_location = document.getElementById("history_location");
